@@ -1,67 +1,59 @@
-tailwind.config = {
-  darkMode: "class",
-  theme: {
-    extend: {
-      "colors": {
-              "inverse-surface": "#dce1fb",
-              "error": "#ffb4ab",
-              "surface-dim": "#0c1324",
-              "on-surface": "#dce1fb",
-              "tertiary-fixed-dim": "#abd600",
-              "on-tertiary": "#283500",
-              "primary-fixed-dim": "#00dce5",
-              "surface-bright": "#33394c",
-              "on-primary-fixed": "#002021",
-              "on-secondary-container": "#6a4800",
-              "primary-fixed": "#63f7ff",
-              "secondary-fixed": "#ffdeac",
-              "on-error": "#690005",
-              "surface-container": "#191f31",
-              "on-secondary-fixed": "#281900",
-              "error-container": "#93000a",
-              "on-secondary": "#432c00",
-              "outline-variant": "#3a494a",
-              "surface-tint": "#00dce5",
-              "on-surface-variant": "#b9caca",
-              "surface-container-highest": "#2e3447",
-              "on-tertiary-fixed": "#161e00",
-              "on-error-container": "#ffdad6",
-              "on-tertiary-fixed-variant": "#3c4d00",
-              "surface": "#0c1324",
-              "surface-container-high": "#23293c",
-              "background": "#0c1324",
-              "on-tertiary-container": "#536900",
-              "primary": "#e9feff",
-              "on-primary": "#003739",
-              "inverse-primary": "#00696e",
-              "tertiary-fixed": "#c3f400",
-              "on-primary-container": "#006c71",
-              "surface-container-lowest": "#070d1f",
-              "outline": "#849495",
-              "secondary-container": "#feb300",
-              "secondary": "#ffd799",
-              "secondary-fixed-dim": "#ffba38",
-              "surface-container-low": "#151b2d",
-              "tertiary": "#f6ffd3",
-              "inverse-on-surface": "#2a3043",
-              "surface-variant": "#2e3447",
-              "tertiary-container": "#bfef00",
-              "on-secondary-fixed-variant": "#604100",
-              "on-background": "#dce1fb",
-              "on-primary-fixed-variant": "#004f53",
-              "primary-container": "#00f5ff"
-      },
-      "borderRadius": {
-              "DEFAULT": "0.125rem",
-              "lg": "0.25rem",
-              "xl": "0.5rem",
-              "full": "0.75rem"
-      },
-      "fontFamily": {
-              "headline": ["Space Grotesk"],
-              "body": ["Manrope"],
-              "label": ["Space Grotesk"]
-      }
-    },
-  },
+function enterMode(mode){
+  const o=document.getElementById('modeSelectorOverlay');
+  o.classList.add('hidden-out');
+  switchMode(mode);
+  setTimeout(()=>{o.style.display='none';},500);
 }
+function showModeSelector(){
+  const o=document.getElementById('modeSelectorOverlay');
+  o.style.display='flex';
+  o.classList.remove('hidden-out');
+}
+function switchMode(mode){
+  const body=document.body;
+  const techTab=document.getElementById('navTabTech');
+  const mktTab=document.getElementById('navTabMkt');
+  const techNav=document.getElementById('tech-nav-links');
+  const mktNav=document.getElementById('mkt-nav-links');
+  const mobTech=document.getElementById('mobile-tech-links');
+  const mobMkt=document.getElementById('mobile-mkt-links');
+  if(mode==='mkt'){
+    body.classList.add('mkt-mode');
+    techTab.className='mode-tab inactive'; techTab.textContent='AI/Tech';
+    mktTab.className='mode-tab active-mkt'; mktTab.textContent='Marketing';
+    techNav.classList.add('hidden'); techNav.classList.remove('flex');
+    mktNav.classList.remove('hidden'); mktNav.classList.add('flex');
+    mobTech.classList.add('hidden');
+    mobMkt.classList.remove('hidden');
+  } else {
+    body.classList.remove('mkt-mode');
+    techTab.className='mode-tab active-tech'; techTab.textContent='AI/Tech';
+    mktTab.className='mode-tab inactive'; mktTab.textContent='Marketing';
+    techNav.classList.remove('hidden'); techNav.classList.add('flex');
+    mktNav.classList.add('hidden'); mktNav.classList.remove('flex');
+    mobTech.classList.remove('hidden');
+    mobMkt.classList.add('hidden');
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+  initReveal();
+}
+function openMobileMenu(){document.getElementById('mobile-menu').classList.remove('hidden');document.body.style.overflow='hidden';}
+function closeMobileMenu(){document.getElementById('mobile-menu').classList.add('hidden');document.body.style.overflow='';}
+
+function initReveal(){
+  const els=document.querySelectorAll('.reveal');
+  // Only enhance if user prefers motion
+  if(window.matchMedia('(prefers-reduced-motion: no-preference)').matches){
+    els.forEach(el=>{
+      el.classList.add('js-enhanced');
+      el.classList.remove('revealed');
+    });
+    const obs=new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('revealed');obs.unobserve(e.target);}});
+    },{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(el=>obs.observe(el));
+  } else {
+    els.forEach(el=>el.classList.add('revealed'));
+  }
+}
+initReveal();
