@@ -43,48 +43,48 @@ tailwind.config = {
 </head>
 <body class="min-h-screen">
 
-<div class="max-w-7xl mx-auto px-6 py-10">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
   <!-- Header -->
-  <div class="mb-10">
-    <p class="font-display text-xs tracking-widest uppercase text-text-muted mb-2">Google Search Console · 28 Days</p>
-    <h1 class="font-display font-black text-4xl md:text-5xl tracking-tight text-primary">feron.app</h1>
-    <p class="text-text-muted mt-2">SEO performance dashboard — May 25 to June 21, 2026</p>
+  <div class="mb-8 sm:mb-10">
+    <p class="font-display text-[10px] sm:text-xs tracking-widest uppercase text-text-muted mb-2">Google Search Console · 28 Days</p>
+    <h1 class="font-display font-black text-3xl sm:text-4xl md:text-5xl tracking-tight text-primary">feron.app</h1>
+    <p class="text-text-muted mt-2 text-sm sm:text-base">SEO performance dashboard — May 25 to June 21, 2026</p>
   </div>
 
   <!-- KPI Row -->
-  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
-    <div class="card p-5">
-      <p class="text-text-muted text-xs uppercase tracking-wider font-display mb-1">Impressions</p>
-      <p class="font-display font-black text-3xl text-primary">60</p>
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 mb-6 sm:mb-8">
+    <div class="card p-4 sm:p-5">
+      <p class="text-text-muted text-[10px] sm:text-xs uppercase tracking-wider font-display mb-1">Impressions</p>
+      <p class="font-display font-black text-2xl sm:text-3xl text-primary">60</p>
     </div>
-    <div class="card p-5">
-      <p class="text-text-muted text-xs uppercase tracking-wider font-display mb-1">Clicks</p>
-      <p class="font-display font-black text-3xl text-text-muted">0</p>
+    <div class="card p-4 sm:p-5">
+      <p class="text-text-muted text-[10px] sm:text-xs uppercase tracking-wider font-display mb-1">Clicks</p>
+      <p class="font-display font-black text-2xl sm:text-3xl text-text-muted">0</p>
     </div>
-    <div class="card p-5">
-      <p class="text-text-muted text-xs uppercase tracking-wider font-display mb-1">CTR</p>
-      <p class="font-display font-black text-3xl text-text-muted">0%</p>
+    <div class="card p-4 sm:p-5">
+      <p class="text-text-muted text-[10px] sm:text-xs uppercase tracking-wider font-display mb-1">CTR</p>
+      <p class="font-display font-black text-2xl sm:text-3xl text-text-muted">0%</p>
     </div>
-    <div class="card p-5">
-      <p class="text-text-muted text-xs uppercase tracking-wider font-display mb-1">Avg Position</p>
-      <p class="font-display font-black text-3xl text-accent">20.7</p>
+    <div class="card p-4 sm:p-5">
+      <p class="text-text-muted text-[10px] sm:text-xs uppercase tracking-wider font-display mb-1">Avg Position</p>
+      <p class="font-display font-black text-2xl sm:text-3xl text-accent">20.7</p>
     </div>
-    <div class="card p-5">
-      <p class="text-text-muted text-xs uppercase tracking-wider font-display mb-1">Countries</p>
-      <p class="font-display font-black text-3xl text-secondary">19</p>
+    <div class="card p-4 sm:p-5">
+      <p class="text-text-muted text-[10px] sm:text-xs uppercase tracking-wider font-display mb-1">Countries</p>
+      <p class="font-display font-black text-2xl sm:text-3xl text-secondary">19</p>
     </div>
-    <div class="card p-5">
-      <p class="text-text-muted text-xs uppercase tracking-wider font-display mb-1">Best Position</p>
-      <p class="font-display font-black text-3xl text-[#a78bfa]">#2</p>
+    <div class="card p-4 sm:p-5">
+      <p class="text-text-muted text-[10px] sm:text-xs uppercase tracking-wider font-display mb-1">Best Position</p>
+      <p class="font-display font-black text-2xl sm:text-3xl text-[#a78bfa]">#2</p>
       <p class="text-text-muted text-xs mt-1">Czech Republic</p>
     </div>
   </div>
 
   <!-- Charts Row -->
-  <div class="grid md:grid-cols-2 gap-5 mb-8">
+  <div class="grid md:grid-cols-2 gap-4 sm:gap-5 mb-6 sm:mb-8">
     <!-- Daily Impressions -->
-    <div class="card p-6">
-      <h3 class="font-display font-bold text-lg text-text mb-5">Daily Impressions</h3>
+    <div class="card p-5 sm:p-6">
+      <h3 class="font-display font-bold text-base sm:text-lg text-text mb-4 sm:mb-5">Daily Impressions</h3>
       <svg viewBox="0 0 560 200" class="w-full" preserveAspectRatio="none">
         <!-- Grid lines -->
         <line x1="40" y1="160" x2="540" y2="160" stroke="#3a494a" stroke-width="0.5" opacity="0.3"/>
@@ -110,26 +110,26 @@ tailwind.config = {
     </div>
 
     <!-- Countries -->
-    <div class="card p-6">
-      <h3 class="font-display font-bold text-lg text-text mb-5">Top Countries by Impressions</h3>
-      <div class="space-y-3">
-        <div class="flex items-center gap-3"><span class="w-24 text-sm text-text-muted shrink-0">États-Unis</span><div class="flex-1 bg-surface-elevated rounded-full h-2"><div class="bar bg-primary" style="width:100%"></div></div><span class="w-8 text-right text-sm font-display font-bold text-primary">16</span></div>
-        <div class="flex items-center gap-3"><span class="w-24 text-sm text-text-muted shrink-0">Royaume-Uni</span><div class="flex-1 bg-surface-elevated rounded-full h-2"><div class="bar bg-secondary" style="width:50%"></div></div><span class="w-8 text-right text-sm font-display font-bold text-secondary">8</span></div>
-        <div class="flex items-center gap-3"><span class="w-24 text-sm text-text-muted shrink-0">UAE</span><div class="flex-1 bg-surface-elevated rounded-full h-2"><div class="bar bg-accent" style="width:44%"></div></div><span class="w-8 text-right text-sm font-display font-bold text-accent">7</span></div>
-        <div class="flex items-center gap-3"><span class="w-24 text-sm text-text-muted shrink-0">Inde</span><div class="flex-1 bg-surface-elevated rounded-full h-2"><div class="bar bg-[#a78bfa]" style="width:31%"></div></div><span class="w-8 text-right text-sm font-display font-bold text-[#a78bfa]">5</span></div>
-        <div class="flex items-center gap-3"><span class="w-24 text-sm text-text-muted shrink-0">Pakistan</span><div class="flex-1 bg-surface-elevated rounded-full h-2"><div class="bar bg-[#34d399]" style="width:25%"></div></div><span class="w-8 text-right text-sm font-display font-bold text-[#34d399]">4</span></div>
-        <div class="flex items-center gap-3"><span class="w-24 text-sm text-text-muted shrink-0">Canada</span><div class="flex-1 bg-surface-elevated rounded-full h-2"><div class="bar bg-[#f472b6]" style="width:25%"></div></div><span class="w-8 text-right text-sm font-display font-bold text-[#f472b6]">4</span></div>
-        <div class="flex items-center gap-3"><span class="w-24 text-sm text-text-muted shrink-0">Pologne</span><div class="flex-1 bg-surface-elevated rounded-full h-2"><div class="bar bg-[#60a5fa]" style="width:12%"></div></div><span class="w-8 text-right text-sm font-display font-bold text-[#60a5fa]">2</span></div>
-        <div class="flex items-center gap-3"><span class="w-24 text-sm text-text-muted shrink-0">Allemagne</span><div class="flex-1 bg-surface-elevated rounded-full h-2"><div class="bar bg-[#fbbf24]" style="width:12%"></div></div><span class="w-8 text-right text-sm font-display font-bold text-[#fbbf24]">2</span></div>
+    <div class="card p-5 sm:p-6">
+      <h3 class="font-display font-bold text-base sm:text-lg text-text mb-4 sm:mb-5">Top Countries by Impressions</h3>
+      <div class="space-y-2 sm:space-y-3">
+        <div class="flex items-center gap-2 sm:gap-3"><span class="w-16 sm:w-24 text-xs sm:text-sm text-text-muted shrink-0 truncate">États-Unis</span><div class="flex-1 bg-surface-elevated rounded-full h-2"><div class="bar bg-primary" style="width:100%"></div></div><span class="w-6 sm:w-8 text-right text-xs sm:text-sm font-display font-bold text-primary">16</span></div>
+        <div class="flex items-center gap-2 sm:gap-3"><span class="w-16 sm:w-24 text-xs sm:text-sm text-text-muted shrink-0 truncate">Royaume-Uni</span><div class="flex-1 bg-surface-elevated rounded-full h-2"><div class="bar bg-secondary" style="width:50%"></div></div><span class="w-6 sm:w-8 text-right text-xs sm:text-sm font-display font-bold text-secondary">8</span></div>
+        <div class="flex items-center gap-2 sm:gap-3"><span class="w-16 sm:w-24 text-xs sm:text-sm text-text-muted shrink-0 truncate">UAE</span><div class="flex-1 bg-surface-elevated rounded-full h-2"><div class="bar bg-accent" style="width:44%"></div></div><span class="w-6 sm:w-8 text-right text-xs sm:text-sm font-display font-bold text-accent">7</span></div>
+        <div class="flex items-center gap-2 sm:gap-3"><span class="w-16 sm:w-24 text-xs sm:text-sm text-text-muted shrink-0 truncate">Inde</span><div class="flex-1 bg-surface-elevated rounded-full h-2"><div class="bar bg-[#a78bfa]" style="width:31%"></div></div><span class="w-6 sm:w-8 text-right text-xs sm:text-sm font-display font-bold text-[#a78bfa]">5</span></div>
+        <div class="flex items-center gap-2 sm:gap-3"><span class="w-16 sm:w-24 text-xs sm:text-sm text-text-muted shrink-0 truncate">Pakistan</span><div class="flex-1 bg-surface-elevated rounded-full h-2"><div class="bar bg-[#34d399]" style="width:25%"></div></div><span class="w-6 sm:w-8 text-right text-xs sm:text-sm font-display font-bold text-[#34d399]">4</span></div>
+        <div class="flex items-center gap-2 sm:gap-3"><span class="w-16 sm:w-24 text-xs sm:text-sm text-text-muted shrink-0 truncate">Canada</span><div class="flex-1 bg-surface-elevated rounded-full h-2"><div class="bar bg-[#f472b6]" style="width:25%"></div></div><span class="w-6 sm:w-8 text-right text-xs sm:text-sm font-display font-bold text-[#f472b6]">4</span></div>
+        <div class="flex items-center gap-2 sm:gap-3"><span class="w-16 sm:w-24 text-xs sm:text-sm text-text-muted shrink-0 truncate">Pologne</span><div class="flex-1 bg-surface-elevated rounded-full h-2"><div class="bar bg-[#60a5fa]" style="width:12%"></div></div><span class="w-6 sm:w-8 text-right text-xs sm:text-sm font-display font-bold text-[#60a5fa]">2</span></div>
+        <div class="flex items-center gap-2 sm:gap-3"><span class="w-16 sm:w-24 text-xs sm:text-sm text-text-muted shrink-0 truncate">Allemagne</span><div class="flex-1 bg-surface-elevated rounded-full h-2"><div class="bar bg-[#fbbf24]" style="width:12%"></div></div><span class="w-6 sm:w-8 text-right text-xs sm:text-sm font-display font-bold text-[#fbbf24]">2</span></div>
       </div>
     </div>
   </div>
 
   <!-- Bottom Row -->
-  <div class="grid md:grid-cols-3 gap-5">
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5">
     <!-- Device Split -->
-    <div class="card p-6">
-      <h3 class="font-display font-bold text-lg text-text mb-4">Device Breakdown</h3>
+    <div class="card p-5 sm:p-6">
+      <h3 class="font-display font-bold text-base sm:text-lg text-text mb-3 sm:mb-4">Device Breakdown</h3>
       <div class="flex items-center justify-center gap-8">
         <div class="text-center">
           <svg width="100" height="100" viewBox="0 0 100 100">
@@ -151,8 +151,8 @@ tailwind.config = {
     </div>
 
     <!-- Queries -->
-    <div class="card p-6">
-      <h3 class="font-display font-bold text-lg text-text mb-4">Top Queries</h3>
+    <div class="card p-5 sm:p-6">
+      <h3 class="font-display font-bold text-base sm:text-lg text-text mb-3 sm:mb-4">Top Queries</h3>
       <div class="space-y-4">
         <div>
           <div class="flex justify-between mb-1"><span class="text-sm text-text">feron</span><span class="text-sm font-display font-bold text-primary">39</span></div>
@@ -168,9 +168,9 @@ tailwind.config = {
     </div>
 
     <!-- Page -->
-    <div class="card p-6">
-      <h3 class="font-display font-bold text-lg text-text mb-4">Top Page</h3>
-      <p class="text-primary text-sm font-mono mb-3 break-all">https://feron.app/</p>
+    <div class="card p-5 sm:p-6">
+      <h3 class="font-display font-bold text-base sm:text-lg text-text mb-3 sm:mb-4">Top Page</h3>
+      <p class="text-primary text-xs sm:text-sm font-mono mb-3 break-all">https://feron.app/</p>
       <div class="grid grid-cols-2 gap-3">
         <div class="bg-surface-elevated rounded-lg p-3 text-center">
           <p class="text-text-muted text-xs uppercase tracking-wider font-display">Impressions</p>
