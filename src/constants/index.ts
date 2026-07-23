@@ -112,7 +112,7 @@ export const projects: TProject[] = [
       { name: "Node.js", color: "#68a063" },
       { name: "Supabase", color: "#3ecf8e" },
     ],
-    image: "/projects/feron.svg",
+    image: "/feron-logo.png",
     live_link: "https://feron.app",
   },
   {
