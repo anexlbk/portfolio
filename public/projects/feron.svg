@@ -1,7 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
   <rect width="256" height="256" rx="40" fill="#1A1A2E"/>
-  <rect x="70" y="55" width="24" height="146" rx="6" fill="#00E5FF"/>
-  <rect x="70" y="55" width="100" height="24" rx="6" fill="#00E5FF"/>
-  <rect x="70" y="112" width="80" height="22" rx="6" fill="#00E5FF"/>
+  <!-- Dashboard window -->
+  <rect x="40" y="45" width="176" height="120" rx="12" fill="#222244"/>
+  <rect x="40" y="45" width="176" height="24" rx="12" fill="#2A2A50"/>
+  <circle cx="56" cy="57" r="5" fill="#FF6B6B"/>
+  <circle cx="72" cy="57" r="5" fill="#FFD93D"/>
+  <circle cx="88" cy="57" r="5" fill="#6BCB77"/>
+  <!-- Chart bars -->
+  <rect x="56" y="90" width="18" height="55" rx="4" fill="#00E5FF" opacity="0.8"/>
+  <rect x="82" y="105" width="18" height="40" rx="4" fill="#00E5FF" opacity="0.6"/>
+  <rect x="108" y="80" width="18" height="65" rx="4" fill="#00E5FF" opacity="0.9"/>
+  <rect x="134" y="95" width="18" height="50" rx="4" fill="#00E5FF" opacity="0.7"/>
+  <rect x="160" y="70" width="18" height="75" rx="4" fill="#00E5FF"/>
+  <!-- Trend line -->
+  <polyline points="65,85 91,100 117,75 143,90 169,65" fill="none" stroke="#FF6B9D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="65" cy="85" r="4" fill="#FF6B9D"/>
+  <circle cx="91" cy="100" r="4" fill="#FF6B9D"/>
+  <circle cx="117" cy="75" r="4" fill="#FF6B9D"/>
+  <circle cx="143" cy="90" r="4" fill="#FF6B9D"/>
+  <circle cx="169" cy="65" r="4" fill="#FF6B9D"/>
+  <!-- Bottom bar -->
+  <rect x="40" y="175" width="176" height="8" rx="4" fill="#00E5FF" opacity="0.2"/>
+  <!-- Decorative elements -->
   <rect x="50" y="190" width="156" height="12" rx="6" fill="#00E5FF" opacity="0.3"/>
 </svg>
