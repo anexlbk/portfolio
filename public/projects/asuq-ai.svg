@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f0c29"/>
+      <stop offset="50%" stop-color="#302b63"/>
+      <stop offset="100%" stop-color="#24243e"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e16462"/>
+      <stop offset="100%" stop-color="#00d4ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="40" fill="url(#bg)"/>
+  <!-- Neural network nodes -->
+  <circle cx="80" cy="100" r="8" fill="#e16462" opacity="0.9"/>
+  <circle cx="128" cy="70" r="6" fill="#00d4ff" opacity="0.8"/>
+  <circle cx="176" cy="95" r="7" fill="#e16462" opacity="0.7"/>
+  <circle cx="100" cy="150" r="5" fill="#00d4ff" opacity="0.85"/>
+  <circle cx="155" cy="145" r="9" fill="#e16462" opacity="0.9"/>
+  <!-- Neural connections -->
+  <line x1="80" y1="100" x2="128" y2="70" stroke="#00d4ff" stroke-width="1.5" opacity="0.4"/>
+  <line x1="128" y1="70" x2="176" y2="95" stroke="#e16462" stroke-width="1.5" opacity="0.4"/>
+  <line x1="80" y1="100" x2="100" y2="150" stroke="#e16462" stroke-width="1.5" opacity="0.3"/>
+  <line x1="176" y1="95" x2="155" y2="145" stroke="#00d4ff" stroke-width="1.5" opacity="0.3"/>
+  <line x1="100" y1="150" x2="155" y2="145" stroke="#e16462" stroke-width="1.5" opacity="0.35"/>
+  <!-- Central AI brain icon -->
+  <path d="M128 110 C140 100, 155 108, 148 120 C155 115, 165 125, 158 135 C168 132, 172 145, 162 150 C168 158, 160 168, 150 162 C152 172, 140 175, 135 165 C128 172, 118 168, 118 158 C108 162, 100 152, 108 145 C98 148, 95 135, 105 132 C98 125, 105 112, 115 118 C112 108, 122 102, 128 110Z" fill="none" stroke="url(#glow)" stroke-width="2.5" opacity="0.85"/>
+  <!-- Market chart line -->
+  <polyline points="40,190 70,185 100,195 130,180 160,188 190,175 220,178" fill="none" stroke="#00d4ff" stroke-width="2" opacity="0.5" stroke-linecap="round"/>
+  <polyline points="40,200 70,198 100,205 130,195 160,200 190,192 220,195" fill="none" stroke="#e16462" stroke-width="1.5" opacity="0.35" stroke-linecap="round"/>
+  <!-- Text -->
+  <text x="128" y="228" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#ffffff" letter-spacing="2">ASUQ AI</text>
+</svg>
