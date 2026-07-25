@@ -8,7 +8,7 @@ const Footer = () => (
       </p>
       <div className="flex gap-6">
         <a
-          href="https://linkedin.com"
+          href="https://www.linkedin.com/in/anas-lachmi-benboukrita/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-secondary hover:text-tech-accent text-xs font-manrope transition-colors"
@@ -16,7 +16,7 @@ const Footer = () => (
           LinkedIn
         </a>
         <a
-          href="mailto:anes@example.com"
+          href="mailto:anaslachmi@gmail.com"
           className="text-secondary hover:text-tech-accent text-xs font-manrope transition-colors"
         >
           Email

@@ -1,6 +1,5 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
 import SectionWrapper from "../../hoc/SectionWrapper";
 import SectionHeading from "../atoms/SectionHeading";
 import { slideIn } from "../../utils/motion";
@@ -8,43 +7,6 @@ import StarsCanvas from "../canvas/Stars";
 import EarthCanvas from "../canvas/Earth";
 
 const Contact = () => {
-  const formRef = useRef<HTMLFormElement>(null);
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [loading, setLoading] = useState(false);
-  const [sent, setSent] = useState(false);
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => setForm({ ...form, [e.target.name]: e.target.value });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-
-    emailjs
-      .send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID ?? "",
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID ?? "",
-        {
-          from_name: form.name,
-          to_name: "Anes",
-          from_email: form.email,
-          to_email: "anes@example.com",
-          message: form.message,
-        },
-        import.meta.env.VITE_EMAILJS_ACCESS_TOKEN ?? ""
-      )
-      .then(() => {
-        setLoading(false);
-        setSent(true);
-        setForm({ name: "", email: "", message: "" });
-      })
-      .catch(() => {
-        setLoading(false);
-        alert("Something went wrong. Please try again.");
-      });
-  };
-
   return (
     <div className="relative" id="contact">
       <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
@@ -57,73 +19,57 @@ const Contact = () => {
             headText="Contact."
           />
 
-          {sent ? (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="text-center py-12"
-            >
-              <p className="text-tech-accent text-xl font-spaceGrotesk font-bold mb-2">
-                Thank you!
-              </p>
-              <p className="text-secondary text-sm font-manrope">
-                Your message has been sent. I'll get back to you soon.
-              </p>
-            </motion.div>
-          ) : (
-            <form
-              ref={formRef}
-              onSubmit={handleSubmit}
-              className="flex flex-col gap-5"
-            >
-              <label className="flex flex-col">
-                <span className="text-white text-sm font-medium font-manrope mb-2">
-                  Your Name
-                </span>
-                <input
-                  type="text"
-                  name="name"
-                  value={form.name}
-                  onChange={handleChange}
-                  placeholder="What's your name?"
-                  className="bg-tertiary/50 border border-white/10 py-3 px-4 rounded-lg text-white placeholder-secondary/50 text-sm font-manrope focus:border-tech-accent/50 focus:border transition-colors"
-                />
-              </label>
-              <label className="flex flex-col">
-                <span className="text-white text-sm font-medium font-manrope mb-2">
-                  Your Email
-                </span>
-                <input
-                  type="email"
-                  name="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  placeholder="What's your email?"
-                  className="bg-tertiary/50 border border-white/10 py-3 px-4 rounded-lg text-white placeholder-secondary/50 text-sm font-manrope focus:border-tech-accent/50 focus:border transition-colors"
-                />
-              </label>
-              <label className="flex flex-col">
-                <span className="text-white text-sm font-medium font-manrope mb-2">
-                  Your Message
-                </span>
-                <textarea
-                  rows={5}
-                  name="message"
-                  value={form.message}
-                  onChange={handleChange}
-                  placeholder="What do you want to say?"
-                  className="bg-tertiary/50 border border-white/10 py-3 px-4 rounded-lg text-white placeholder-secondary/50 text-sm font-manrope focus:border-tech-accent/50 focus:border transition-colors resize-none"
-                />
-              </label>
-              <button
-                type="submit"
-                disabled={loading}
-                className="bg-tech-accent/90 hover:bg-tech-accent py-3 px-8 rounded-xl text-primary font-bold font-spaceGrotesk text-sm transition-colors disabled:opacity-50 w-fit"
+          <div className="flex flex-col gap-6 py-4">
+            <p className="text-secondary text-sm font-manrope leading-relaxed">
+              I'm always open to new opportunities, collaborations, and interesting conversations.
+              Feel free to reach out through any of the channels below.
+            </p>
+
+            <div className="flex flex-col gap-4">
+              <a
+                href="mailto:anaslachmi@gmail.com"
+                className="flex items-center gap-3 text-white hover:text-tech-accent transition-colors font-manrope text-sm"
               >
-                {loading ? "Sending..." : "Send Message"}
-              </button>
-            </form>
-          )}
+                <span className="w-10 h-10 rounded-lg bg-tertiary/50 border border-white/10 flex items-center justify-center text-tech-accent text-lg">
+                  @
+                </span>
+                anaslachmi@gmail.com
+              </a>
+              <a
+                href="https://www.linkedin.com/in/anas-lachmi-benboukrita/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-white hover:text-tech-accent transition-colors font-manrope text-sm"
+              >
+                <span className="w-10 h-10 rounded-lg bg-tertiary/50 border border-white/10 flex items-center justify-center text-tech-accent text-lg">
+                  in
+                </span>
+                LinkedIn
+              </a>
+            </div>
+
+            <a
+              href="https://linktr.ee/aneslbk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 bg-tech-accent/90 hover:bg-tech-accent py-3 px-8 rounded-xl text-primary font-bold font-spaceGrotesk text-sm transition-colors w-fit mt-2"
+            >
+              Contact me via Linktree
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </a>
+          </div>
         </motion.div>
 
         <motion.div
