@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useMode } from "../../context/ModeContext";
 import { navLinks } from "../../constants";
-import { ModeType } from "../../types";
 
 const Navbar = () => {
-  const { mode, setMode } = useMode();
   const [active, setActive] = useState("");
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -16,10 +13,7 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    const sections = navLinks
-      .filter((l) => l.mode === undefined || l.mode === mode || mode === "all")
-      .map((l) => document.getElementById(l.id));
-
+    const sections = navLinks.map((l) => document.getElementById(l.id));
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -30,20 +24,9 @@ const Navbar = () => {
       },
       { rootMargin: "-20% 0px -60% 0px" }
     );
-
     sections.forEach((s) => s && observer.observe(s));
     return () => observer.disconnect();
-  }, [mode]);
-
-  const filteredLinks = navLinks.filter(
-    (l) => l.mode === undefined || l.mode === mode || mode === "all"
-  );
-
-  const modeButtons: { label: string; value: ModeType; color: string }[] = [
-    { label: "AI / Tech", value: "tech", color: "bg-tech-accent" },
-    { label: "Marketing", value: "marketing", color: "bg-mkt-accent" },
-    { label: "All", value: "all", color: "bg-white" },
-  ];
+  }, []);
 
   return (
     <nav
@@ -68,33 +51,15 @@ const Navbar = () => {
           </p>
         </a>
 
-        <div className="hidden md:flex items-center gap-1">
-          {modeButtons.map((btn) => (
-            <button
-              key={btn.value}
-              onClick={() => setMode(btn.value)}
-              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 ${
-                mode === btn.value
-                  ? `${btn.color} text-primary font-bold`
-                  : "text-secondary hover:text-white"
-              }`}
-            >
-              {btn.label}
-            </button>
-          ))}
-        </div>
-
         <ul className="hidden md:flex items-center gap-6">
-          {filteredLinks.map((link) => (
+          {navLinks.map((link) => (
             <li key={link.id}>
               <a
                 href={`#${link.id}`}
                 onClick={() => setActive(link.id)}
                 className={`text-sm font-medium transition-colors duration-200 ${
                   active === link.id
-                    ? mode === "marketing"
-                      ? "text-mkt-accent"
-                      : "text-tech-accent"
+                    ? "text-tech-accent"
                     : "text-secondary hover:text-white"
                 }`}
               >
@@ -116,23 +81,8 @@ const Navbar = () => {
 
       {mobileOpen && (
         <div className="md:hidden bg-primary/95 backdrop-blur-md border-t border-white/10">
-          <div className="flex justify-center gap-2 py-3 px-6">
-            {modeButtons.map((btn) => (
-              <button
-                key={btn.value}
-                onClick={() => setMode(btn.value)}
-                className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
-                  mode === btn.value
-                    ? `${btn.color} text-primary font-bold`
-                    : "text-secondary hover:text-white"
-                }`}
-              >
-                {btn.label}
-              </button>
-            ))}
-          </div>
-          <ul className="flex flex-col items-center gap-4 pb-6">
-            {filteredLinks.map((link) => (
+          <ul className="flex flex-col items-center gap-4 py-6">
+            {navLinks.map((link) => (
               <li key={link.id}>
                 <a
                   href={`#${link.id}`}

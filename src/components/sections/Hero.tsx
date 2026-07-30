@@ -1,13 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useMode } from "../../context/ModeContext";
 import { fadeIn, textVariant } from "../../utils/motion";
 import ComputerCanvas from "../canvas/Computer";
 
-const Hero = () => {
-  const { mode } = useMode();
-
-  return (
+const Hero = () => (
     <section className="relative w-full h-screen mx-auto">
       <div className="absolute inset-0 top-[120px] max-w-7xl mx-auto px-6 sm:px-16 xl:px-12 flex flex-row items-start gap-5">
         <div className="flex flex-col justify-center items-center mt-5">
@@ -24,19 +20,9 @@ const Hero = () => {
               Anes Lachemi
             </h1>
             <h2 className="font-spaceGrotesk text-[1.2rem] sm:text-[1.8rem] font-semibold mt-2">
-              {mode === "marketing" ? (
-                <span className="text-mkt-text">Growth That Shows</span>
-              ) : mode === "tech" ? (
-                <span className="text-tech-text">
-                  CS Student / AI Builder / Startup Founder
-                </span>
-              ) : (
-                <>
-                  <span className="text-tech-text">AI Builder </span>
-                  <span className="text-secondary">& </span>
-                  <span className="text-mkt-text">Growth Marketer</span>
-                </>
-              )}
+              <span className="text-tech-text">AI Builder </span>
+              <span className="text-secondary">& </span>
+              <span className="text-mkt-text">Growth Marketer</span>
             </h2>
           </motion.div>
 
@@ -44,9 +30,7 @@ const Hero = () => {
             variants={fadeIn("up", "spring", 1, 1)}
             className="text-secondary text-sm sm:text-base max-w-md mt-4 leading-relaxed font-manrope"
           >
-            {mode === "marketing"
-              ? "I help brands and startups grow their digital presence through strategy, content, and data-driven marketing."
-              : "I build AI-powered products and full-stack applications. Founder of Feron and creator of Nami AI."}
+            I build AI-powered products and full-stack applications. Founder of Feron and creator of Nami AI.
           </motion.p>
         </div>
       </div>
@@ -73,7 +57,6 @@ const Hero = () => {
         </a>
       </motion.div>
     </section>
-  );
-};
+);
 
 export default Hero;
